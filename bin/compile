@@ -1,0 +1,23 @@
+#!/bin/sh
+
+indent() {
+  sed -u 's/^/       /'
+}
+
+echo "-----> Installing jpegtran"
+BUILD_DIR=$1
+VENDOR_DIR="vendor"
+OPTIPNG_DOWNLOAD_URL="https://github.com/yeoman/node-jpegtran-bin/raw/master/vendor/linux/x64/jpegtran"
+
+echo "OPTIPNG_DOWNLOAD_URL = " $OPTIPNG_DOWNLOAD_URL | indent
+
+cd $BUILD_DIR
+mkdir -p $VENDOR_DIR/jpegtran/bin
+cd $VENDOR_DIR
+curl -L --silent -o jpegtran/bin/jpegtran $OPTIPNG_DOWNLOAD_URL
+chmod +x jpegtran/bin/jpegtran
+
+echo "exporting PATH" | indent
+PROFILE_PATH="$BUILD_DIR/.profile.d/jpegtran.sh"
+mkdir -p $(dirname $PROFILE_PATH)
+echo 'export PATH="$PATH:vendor/jpegtran/bin"' >> $PROFILE_PATH
