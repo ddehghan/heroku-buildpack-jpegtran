@@ -7,7 +7,7 @@ indent() {
 echo "-----> Installing jpegtran"
 BUILD_DIR=$1
 VENDOR_DIR="vendor"
-OPTIPNG_DOWNLOAD_URL="https://github.com/yeoman/node-jpegtran-bin/raw/master/vendor/linux/x64/jpegtran"
+OPTIPNG_DOWNLOAD_URL="https://github.com/yeoman/node-jpegtran-bin/raw/018416e617c91730c6ebceca6d203b2424d20f41/vendor/linux/x64/jpegtran"
 
 echo "OPTIPNG_DOWNLOAD_URL = " $OPTIPNG_DOWNLOAD_URL | indent
 
