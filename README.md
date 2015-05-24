@@ -20,7 +20,7 @@ Then create an application using the multi buildpack:
 
 or configure an existing application:
 
-    $ heroku config BUILDPACK_URL=https://github.com/ddollar/heroku-buildpack-multi
+    $ heroku buildpacks:set https://github.com/ddollar/heroku-buildpack-multi.git
 
 You can verify that everything is properly installed by running the following command:
 
